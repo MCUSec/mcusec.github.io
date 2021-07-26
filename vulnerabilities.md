@@ -9,6 +9,7 @@ This page summarizes all of the vulnerabilities discovered by our reseasrch work
 
 
 ## Outline
+
 | Target | Bug number | Affected Vendors or Products |
 | :--- | ---: | ---: |
 | [Mbed OS MQTT](#mbed_os_mqtt) | 1 | ARM Mbed OS |
