@@ -13,5 +13,5 @@ The key collaborators are:
 Please refer our [git repo](https://github.com/MCUSec) for more detials.
 
 # Outline
-1. [Vulnerabilites Summary](https://mcusec.github.io/vulnerabilities)
+1. [Vulnerabilites Summary](https://mcusec.github.io/vulnerabilities_compact)
 2. [Paper: From Library Portability to Para-rehosting: Natively Executing Microcontroller Software on Commodity Hardware (NDSS 2021)](https://www.ndss-symposium.org/ndss-paper/from-library-portability-to-para-rehosting-natively-executing-microcontroller-software-on-commodity-hardware/)
