@@ -4,7 +4,7 @@ Written by Wenqiang Li
 <span style="color: grey;">Last updated: Jul 25, 2021</span>
 
 ## Preface
-This page summarizes all of the vulnerabilities discovered by our reseasrch works including [Para-rehosting](https://www.ndss-symposium.org/ndss-paper/from-library-portability-to-para-rehosting-natively-executing-microcontroller-software-on-commodity-hardware/), [&mu;AFL]() and an in-processing one, all of which are under [Prof. Guan](https://guanle.org/)'s supervision.
+We develop techniques to facilitate bug-finding for microcontroller-based systems. The bugs we found so far are  maintained in this page.
 
 
 
