@@ -20,7 +20,7 @@ We develop techniques to facilitate bug-finding for microcontroller-based system
 | [LiteOS MQTT](https://gitee.com/LiteOS/LiteOS/tree/master/components/connectivity/mqtt) | 2 ([details](https://mcusec.github.io/vulnerabilities_details#liteos_mqtt)) | Huawei LiteOS |
 | [LiteOS LWM2M Client](https://gitee.com/LiteOS/LiteOS/tree/master/components/connectivity/lwm2m) | 2 ([details](https://mcusec.github.io/vulnerabilities_details#liteos_lwm2m_client)) | Huawei LiteOS |
 | [LwIP](https://savannah.nongnu.org/projects/lwip/) | 3 ([details](https://mcusec.github.io/vulnerabilities_details#lwip)) | NXP, STMicroelectronics |
-| [STM PLC](https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32-ode-function-pack-sw/fp-ind-plcwifi1.html)) | 9 ([details](https://mcusec.github.io/vulnerabilities_details#stm_plc) | STMicroelectronics |
+| [STM PLC](https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32-ode-function-pack-sw/fp-ind-plcwifi1.html) | 9 ([details](https://mcusec.github.io/vulnerabilities_details#stm_plc)) | STMicroelectronics |
 | [uTasker Modbus](https://www.utasker.com/modbus.html) | 5 ([details](https://mcusec.github.io/vulnerabilities_details#modbus)) | uTasker |
 | [NXP SDK USB Driver](https://mcuxpresso.nxp.com/) | 3 ([details](https://mcusec.github.io/vulnerabilities_details#nxp_usb)) | NXP SDK |
 | [STM SDK USB Driver](https://github.com/STMicroelectronics/STM32CubeH7/tree/master/Middlewares/ST/STM32_USB_Host_Library) | 10 ([details](https://mcusec.github.io/vulnerabilities_details#stm_usb)) | STMicroelectronics SDK |
