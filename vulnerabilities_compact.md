@@ -10,9 +10,9 @@ We develop techniques to facilitate bug-finding for microcontroller-based system
 
 ## Outline
 
-| Target | Bug number | Affected Vendors or Products |
+| Target | Bug Details | Affected Vendors or Products |
 | :--- | ---: | ---: |
-| [Mbed OS MQTT](https://mcusec.github.io/vulnerabilities_details#mbed_os_mqtt) | 1 | ARM Mbed OS |
+| [Mbed OS MQTT](https://os.mbed.com/teams/mqtt/) | 1 ([details](https://mcusec.github.io/vulnerabilities_details#mbed_os_mqtt)) | ARM Mbed OS |
 | [Mbed OS CoAP](https://mcusec.github.io/vulnerabilities_details#mbed_os_coap) | 2 | ARM Mbed OS |
 | [Mbed OS Client Cli](https://mcusec.github.io/vulnerabilities_details#mbed_os_cli) | 3 | ARM Mbed OS |
 | [AWS FreeRTOS MQTT](https://mcusec.github.io/vulnerabilities_details#freertos_mqtt) | 1 | Amazon FreeRTOS |
