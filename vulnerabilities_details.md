@@ -11,7 +11,7 @@ Written by Wenqiang Li
     - https://os.mbed.com/teams/mqtt/
     - https://github.com/eclipse/paho.mqtt.embedded-c
 
-### Bug 1
+### Bug 1 (Fixed)
 #### Type
 Doniel of Service
 
@@ -72,7 +72,7 @@ bool MQTT::Client<Network, Timer, a, b>::isTopicMatched(char* topicFilter, MQTTS
 
 - Related Link 
     - https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/mbed-coap
-### Bug 1 (CVE-2019-17212)
+### Bug 1 (CVE-2019-17212, Fixed)
 #### Type
 Buffer overflow
 
@@ -111,7 +111,7 @@ In the following, we list other locations which cause out-of-bound memory access
 - https://github.com/ARMmbed/mbed-os/blob/d91ed5fa42ea0f32e4422a3c562e7b045a17da40/features/frameworks/mbed-coap/source/sn_coap_parser.c#L313
 - https://github.com/ARMmbed/mbed-os/blob/d0686fd30b4d3d02efdc7e4d0fbf0dfe173543b6/features/frameworks/mbed-coap/source/sn_coap_protocol.c#L2488
 
-### Bug 2 (CVE-2019-17211)
+### Bug 2 (CVE-2019-17211, Fixed)
 #### Type
 Integer overflow
 
@@ -156,7 +156,7 @@ In the following, we list other locations which will cause out-of-bound memory a
 - Related Link 
     - https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/mbed-client-cli
 
-### Bug 1
+### Bug 1 (Fixed)
 #### Type
 Buffer overflow
 
@@ -190,7 +190,7 @@ In the following, we list other locations which will cause out-of-bound memory a
 - https://github.com/ARMmbed/mbed-os/blob/d91ed5fa42ea0f32e4422a3c562e7b045a17da40/features/frameworks/mbed-client-cli/source/ns_cmdline.c#L858
 - https://github.com/ARMmbed/mbed-os/blob/d91ed5fa42ea0f32e4422a3c562e7b045a17da40/features/frameworks/mbed-client-cli/source/ns_cmdline.c#L581
 
-### Bug 2
+### Bug 2 (Fixed)
 #### Type
 Heap overflow
 
@@ -207,7 +207,7 @@ static void cmd_push(char *cmd_str, operator_t oper)
 
 ```
 
-### Bug 3
+### Bug 3 (Fixed)
 #### Type
 Stack overflow
 
@@ -244,7 +244,7 @@ static int cmd_parse_argv(char *string_ptr, char **argv)
 - Related Link
     - https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html
 
-### Bug 1 (CVE-2019-13120)
+### Bug 1 (CVE-2019-13120, Fixed)
 #### Type
 Buffer overflow
 
@@ -270,7 +270,7 @@ With manipulated *usTopicLength*, two bytes at arbitrary location are copied to 
 - Related URL
     - https://github.com/aws/amazon-freertos/tree/master/libraries/c_sdk/standard/mqtt
 
-### Bug 1 (CVE-2019-17210)
+### Bug 1 (CVE-2019-17210, Fixed)
 #### Type
 Buffer overflow
 
@@ -293,7 +293,7 @@ Specifically, by manipulating the MQTT message, a malicious broker is able to re
     - https://www.freertos.org/FreeRTOS-Labs/RTOS_labs_download.html
     - https://www.freertos.org/FreeRTOS-Labs/downloads/FreeRTOS-Plus-FAT-160919a-MIT.zip
 
-### Bug 1 (CVE-2019-18178)
+### Bug 1 (CVE-2019-18178, Fixed)
 #### Type
 Use after free
 
@@ -315,7 +315,7 @@ which is possible due to task scheduler, random content may be writed to disk by
 - Related Link 
     - https://gitee.com/LiteOS/LiteOS
 
-### Bug 1
+### Bug 1 (Fixed)
 #### Type
 Buffer overflow
 
@@ -326,7 +326,7 @@ The array *grantedQoSs* is declared and defined in the function *MQTTSubscribe()
 However, it’s a basic variable, but not an array. 
 As a result, when the function *MQTTDeserialize_suback()* tries to parse more than one QoS, there is a stack overflow error.
 
-### Bug 2
+### Bug 2 (Fixed)
 #### Type
 Buffer overflow
 
@@ -346,7 +346,7 @@ If so, the function *MQTTTopicMatched()* will access invalid memory.
 - Related Link 
     - https://gitee.com/LiteOS/LiteOS
 
-### Bug 1
+### Bug 1 (Fixed)
 #### Type
 Use after free
 
@@ -360,7 +360,7 @@ However, the pointer *transacP->userData* points to the memory server aligned by
 and already freed by the function *prv_deleteServerList()* before the function *prv_deleteTransactionList()*. 
 This will lead to a use-after-free fault.
 
-### Bug 2
+### Bug 2 (Fixed)
 #### Type
 Buffer overflow
 
@@ -377,7 +377,7 @@ This will lead to buffer overflow.
 - Related Link 
     - https://savannah.nongnu.org/git/?group=lwip
 
-### Bug 1 (v2.1.2)
+### Bug 1 (v2.1.2, Fixed)
 #### Type
 Buffer overflow
 
@@ -395,7 +395,7 @@ static void icmp6_send_response_with_addrs_and_netif(struct pbuf *p, u8_t code, 
 }
 ```
 
-### Bug 2 (master branch)
+### Bug 2 (master branch, Fixed)
 #### Type
 Buffer overflow
 
@@ -420,7 +420,7 @@ static void icmp6_send_response_with_addrs_and_netif(struct pbuf *p, u8_t code, 
 }
 ```
 
-### Bug 3 (master branch and 2.1.2)
+### Bug 3 (master branch and 2.1.2, Fixed)
 #### Type
 Buffer overflow
 
@@ -446,7 +446,7 @@ zepif_linkoutput(struct netif *netif, struct pbuf *p){
 - Related Link 
     - https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32-ode-function-pack-sw/fp-ind-plcwifi1.html
 
-### Bug 1
+### Bug 1 (Fixed)
 #### Type
 Buffer overflow
 
@@ -482,7 +482,7 @@ int16_t WiFi_Decode (uint8_t* frame)
 }
 ```
 
-### Bug 2
+### Bug 2 (Fixed)
 #### Type
 Buffer overflow
 
@@ -499,7 +499,7 @@ int16_t WiFi_Decode (uint8_t* frame)
 }
 ```
 
-### Bug 3
+### Bug 3 (Fixed)
 #### Type
 Buffer overflow
 
@@ -518,7 +518,7 @@ int16_t WiFi_Decode (uint8_t* frame)
         ...
 }
 ```
-### Bug 4
+### Bug 4 (Fixed)
 #### Type
 Buffer overflow
 
@@ -543,7 +543,7 @@ int8_t Component_parser(void)
 
 ```
 
-### Bug 5
+### Bug 5 (Fixed)
 #### Type
 Buffer overflow
 
@@ -562,7 +562,7 @@ int8_t Component_parser(void)
 }
 ```
 
-### Bug 6
+### Bug 6 (Fixed)
 #### Type
 Buffer overflow
 
@@ -586,7 +586,7 @@ uint8_t Evalute_Expression(uint8_t output_index)
 }
 ```
 
-### Bug 7
+### Bug 7 (Fixed)
 #### Type
 Buffer overflow
 
@@ -611,7 +611,7 @@ if(counter_up[index_c].CNT_dir==0)
 num_obj[index_c]=counter_up[index_c].CNT_val;
 ```
 
-### Bug 8
+### Bug 8 (Fixed)
 #### Type
 Buffer overflow
 
@@ -631,7 +631,7 @@ int16_t WiFi_Decode (uint8_t* frame)
 }
 ```
 
-### Bug 9
+### Bug 9 (Fixed)
 #### Type
 Buffer overflow
 
@@ -659,7 +659,7 @@ uint8_t Evalute_Expression(uint8_t output_index)
 - Related Link 
     - https://www.utasker.com/modbus.html
 
-### Bug 1
+### Bug 1 (Fixed)
 #### Type
 Buffer overflow
 
@@ -679,7 +679,7 @@ extern void fnMODBUS(TTASKTABLE *ptrTaskTable)
 }
 ```
 
-### Bug 2
+### Bug 2 (Fixed)
 #### Type
 Buffer overflow
 
@@ -698,7 +698,7 @@ extern void fnMODBUS(TTASKTABLE *ptrTaskTable)
 }
 ```
 
-### Bug 3
+### Bug 3 (Fixed)
 #### Type
 Buffer overflow
 
@@ -726,7 +726,7 @@ static void fnNextSerialQueue(MODBUS_RX_FUNCTION *modbus_rx_function)
     ...
 }
 ```
-### Bug 4
+### Bug 4 (Fixed)
 #### Type
 Buffer overflow
 
@@ -745,7 +745,7 @@ extern void fnMODBUS(TTASKTABLE *ptrTaskTable)
 }
 ```
 
-### Bug 5
+### Bug 5 (Fixed)
 #### Type
 Buffer overflow
 
@@ -770,7 +770,7 @@ extern void fnMODBUS(TTASKTABLE *ptrTaskTable)
 - Related Link 
     - https://mcuxpresso.nxp.com/en/welcome
 
-### Bug 1
+### Bug 1 (Fixed)
 #### Type
 Buffer overflow
 
@@ -792,7 +792,7 @@ However, *deviceInstance->configurationDesc* has zero length and should not be a
 For example, line 495 triggers 
 a buffer overflow. Also, the function *USB_HostParseDeviceConfigurationDescriptor()* can be exploited.
 
-### Bug 2
+### Bug 2 (Fixed)
 #### Type
 Buffer overflow
 
@@ -800,7 +800,7 @@ Buffer overflow
 This bug is similar to bug1. This time, *wTotalLength* could be a value less than 8 (e.g., 7) and usb_host_devices.c:472 allocates 8 bytes for *deviceInstance->configurationDesc* (due to alignment). 
 However, at line 495, the field bMaxPower exceeds the range of *deviceInstance->configurationDesc* (at offset 9), leading to a buffer overread.
 
-### Bug 3
+### Bug 3 (Fixed)
 #### Type
 Buffer overflow
 
@@ -818,7 +818,7 @@ Therefore, *unionDes->common.bDescriptorType* addresses *unionDes+4*, which can 
     - https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-mcu-mpu-packages/stm32cubeh7.html
     - https://github.com/STMicroelectronics/STM32CubeH7
 
-### Bug 1
+### Bug 1 (Fixed)
 #### Type
 Denial of Service
 
@@ -831,7 +831,7 @@ The variable *dev_desc->bMaxPacketSize* will be used as the size to construct th
 If *bMaxPacketSize* is zero, the firmware will get the error status USBH_FAIL in the function *USBH_HandleControl()* called by the function *USBH_CtlReq()* 
 when trying to communicate with the outside world by IN and OUT pipe in the future and the host will try to re-enumerate. This process will loop again and again.
 
-### Bug 2
+### Bug 2 (Fixed)
 #### Type
 Buffer overflow
 
@@ -841,7 +841,7 @@ The function *USBH_ParseCfgDesc()* parses the configuration descriptor, interfac
 However, it doesn’t check the validity of the variable *cfg_desc->wTotalLength* compared with the total length of the input buffer as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L395. 
 This will cause the following program including calling to the function *USBH_GetNextDesc()*, *USBH_ParseInterfaceDesc()* and *USBH_ParseEPDesc()* configure the system incorrectly.
 
-### Bug 3
+### Bug 3 (Fixed)
 #### Type
 Buffer overflow
 
@@ -852,7 +852,7 @@ However, it doesn’t check the validity of the variable *cfg_desc->bLength* com
 as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L393. 
 This will cause the following function *USBH_GetNextDesc()* and others access wrong memory region and the system will be configured incorrectly.
 
-### Bug 4
+### Bug 4 (Fixed)
 #### Type
 Denial of Service
 
@@ -863,7 +863,7 @@ And it set the variable *cfg_desc->bmAttributes* by the input data from the USB 
 This variable will be used as part of a judgment in the function *USBH_Process()* as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c#L643. 
 With a malformed value, the remote wakeup may be enabled as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c#L643. 
 If the hardware doesn’t support this feature, the system will hang due to a FAIL return value by the function *USBH_HandleControl()*. 
-### Bug 5
+### Bug 5 (Fixed)
 #### Type
 Buffer overflow
 
@@ -878,7 +878,7 @@ If the variable *cfg_desc->wTotalLength* is also malformed, the firmware will ov
 If not, some endpoint descriptors will be left unset as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L422. 
 And the firmware behaves unpredictably as shown from line 180 to 200 in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc.c. 
 
-### Bug 6
+### Bug 6 (Fixed)
 #### Type
 Denial of Service
 
@@ -889,7 +889,7 @@ It initializes the IN endpoint and OUT endpoint as shown from line 180 to line 2
 However, when the variable *bEndpointAddress* of endpoint descriptor are both masked as IN or OUT without checking as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L468, 
 the MSC handler will also only initialize the IN or OUT part as shown from line 180 to line 200 in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc.c.
 
-### Bug 7
+### Bug 7 (Fixed)
 #### Type
 Denial of Service
 
@@ -899,7 +899,7 @@ The function *USBH_ParseEPDesc()* parses the endpoint descriptor of a USB device
 It doesn’t check if the variable *ep_descriptor->wMaxPacketSize* is greater than zero as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L470. 
 If zero, the MSC handler will not able to communicate with outside world as shown from line 180 to line 200 in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc.c. 
 
-### Bug 8
+### Bug 8 (Fixed)
 #### Type
 Denial of Service
 
@@ -911,7 +911,7 @@ This variable will be used in the class to set the polling interval,
 for example as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Class/AUDIO/Src/usbh_audio.c#L858. 
 If set zero, the system will hang when polling operation.
 
-### Bug 9
+### Bug 9 (Fixed)
 #### Type
 Buffer overflow
 
@@ -922,7 +922,7 @@ It’s called by the function *USBH_ParseCfgDesc()* as shown in https://github.c
 It doesn’t check the validity of the variable *if_descriptor->bLength* compared with the total length of the input buffer 
 which may cause a buffer overflow by the following called function *USBH_GetNextDesc()* as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L419. 
 
-### Bug 2
+### Bug 10 (Fixed)
 #### Type
 Buffer overflow
 
