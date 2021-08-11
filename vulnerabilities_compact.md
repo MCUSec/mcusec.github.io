@@ -2,12 +2,11 @@
 
 <span style="color: grey;">Last updated: Aug 10, 2021</span>
 
-## Preface
 We develop techniques to facilitate bug-finding for microcontroller-based systems. The bugs we found so far are  maintained in this page.
 
 
 
-## Outline
+## Bugs that we found (and have been fixed) so far
 
 | Target | Bug Details | Affected Vendors or Products |
 | :--- | ---: | ---: |
