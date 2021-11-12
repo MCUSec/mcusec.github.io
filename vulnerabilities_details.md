@@ -377,7 +377,7 @@ This will lead to buffer overflow.
 - Related Link 
     - https://savannah.nongnu.org/git/?group=lwip
 
-### Bug 1 (v2.1.2, Fixed)
+### Bug 1 (v2.1.2, Fixed, CVE-2020-22285)
 #### Type
 Buffer overflow
 
@@ -395,7 +395,7 @@ static void icmp6_send_response_with_addrs_and_netif(struct pbuf *p, u8_t code, 
 }
 ```
 
-### Bug 2 (master branch, Fixed)
+### Bug 2 (master branch, Fixed, CVE-2020-22283)
 #### Type
 Buffer overflow
 
@@ -420,7 +420,7 @@ static void icmp6_send_response_with_addrs_and_netif(struct pbuf *p, u8_t code, 
 }
 ```
 
-### Bug 3 (master branch and 2.1.2, Fixed)
+### Bug 3 (master branch and 2.1.2, Fixed, zepif_linkoutput)
 #### Type
 Buffer overflow
 
@@ -770,7 +770,7 @@ extern void fnMODBUS(TTASKTABLE *ptrTaskTable)
 - Related Link 
     - https://mcuxpresso.nxp.com/en/welcome
 
-### Bug 1 (Fixed)
+### Bug 1 (Fixed, CVE-2021-38258)
 #### Type
 Buffer overflow
 
@@ -792,7 +792,7 @@ However, *deviceInstance->configurationDesc* has zero length and should not be a
 For example, line 495 triggers 
 a buffer overflow. Also, the function *USB_HostParseDeviceConfigurationDescriptor()* can be exploited.
 
-### Bug 2 (Fixed)
+### Bug 2 (Fixed, CVE-2021-38258)
 #### Type
 Buffer overflow
 
@@ -800,7 +800,7 @@ Buffer overflow
 This bug is similar to bug1. This time, *wTotalLength* could be a value less than 8 (e.g., 7) and usb_host_devices.c:472 allocates 8 bytes for *deviceInstance->configurationDesc* (due to alignment). 
 However, at line 495, the field bMaxPower exceeds the range of *deviceInstance->configurationDesc* (at offset 9), leading to a buffer overread.
 
-### Bug 3 (Fixed)
+### Bug 3 (Fixed, CVE-2021-38260)
 #### Type
 Buffer overflow
 
@@ -818,7 +818,7 @@ Therefore, *unionDes->common.bDescriptorType* addresses *unionDes+4*, which can 
     - https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-mcu-mpu-packages/stm32cubeh7.html
     - https://github.com/STMicroelectronics/STM32CubeH7
 
-### Bug 1 (Fixed)
+### Bug 1 (Fixed, CVE-2021-34268)
 #### Type
 Denial of Service
 
@@ -831,7 +831,7 @@ The variable *dev_desc->bMaxPacketSize* will be used as the size to construct th
 If *bMaxPacketSize* is zero, the firmware will get the error status USBH_FAIL in the function *USBH_HandleControl()* called by the function *USBH_CtlReq()* 
 when trying to communicate with the outside world by IN and OUT pipe in the future and the host will try to re-enumerate. This process will loop again and again.
 
-### Bug 2 (Fixed)
+### Bug 2 (Fixed, CVE-2021-34259)
 #### Type
 Buffer overflow
 
@@ -841,7 +841,7 @@ The function *USBH_ParseCfgDesc()* parses the configuration descriptor, interfac
 However, it doesn’t check the validity of the variable *cfg_desc->wTotalLength* compared with the total length of the input buffer as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L395. 
 This will cause the following program including calling to the function *USBH_GetNextDesc()*, *USBH_ParseInterfaceDesc()* and *USBH_ParseEPDesc()* configure the system incorrectly.
 
-### Bug 3 (Fixed)
+### Bug 3 (Fixed, CVE-2021-34259)
 #### Type
 Buffer overflow
 
@@ -852,7 +852,7 @@ However, it doesn’t check the validity of the variable *cfg_desc->bLength* com
 as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L393. 
 This will cause the following function *USBH_GetNextDesc()* and others access wrong memory region and the system will be configured incorrectly.
 
-### Bug 4 (Fixed)
+### Bug 4 (Fixed, CVE-2021-34261)
 #### Type
 Denial of Service
 
@@ -863,7 +863,8 @@ And it set the variable *cfg_desc->bmAttributes* by the input data from the USB 
 This variable will be used as part of a judgment in the function *USBH_Process()* as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c#L643. 
 With a malformed value, the remote wakeup may be enabled as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c#L643. 
 If the hardware doesn’t support this feature, the system will hang due to a FAIL return value by the function *USBH_HandleControl()*. 
-### Bug 5 (Fixed)
+
+### Bug 5 (Fixed, CVE-2021-34259)
 #### Type
 Buffer overflow
 
@@ -878,7 +879,7 @@ If the variable *cfg_desc->wTotalLength* is also malformed, the firmware will ov
 If not, some endpoint descriptors will be left unset as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L422. 
 And the firmware behaves unpredictably as shown from line 180 to 200 in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc.c. 
 
-### Bug 6 (Fixed)
+### Bug 6 (Fixed, CVE-2021-34267)
 #### Type
 Denial of Service
 
@@ -889,7 +890,7 @@ It initializes the IN endpoint and OUT endpoint as shown from line 180 to line 2
 However, when the variable *bEndpointAddress* of endpoint descriptor are both masked as IN or OUT without checking as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L468, 
 the MSC handler will also only initialize the IN or OUT part as shown from line 180 to line 200 in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc.c.
 
-### Bug 7 (Fixed)
+### Bug 7 (Fixed, CVE-2021-34262)
 #### Type
 Denial of Service
 
@@ -899,7 +900,7 @@ The function *USBH_ParseEPDesc()* parses the endpoint descriptor of a USB device
 It doesn’t check if the variable *ep_descriptor->wMaxPacketSize* is greater than zero as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L470. 
 If zero, the MSC handler will not able to communicate with outside world as shown from line 180 to line 200 in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc.c. 
 
-### Bug 8 (Fixed)
+### Bug 8 (Fixed, CVE-2021-34262)
 #### Type
 Denial of Service
 
@@ -911,7 +912,7 @@ This variable will be used in the class to set the polling interval,
 for example as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Class/AUDIO/Src/usbh_audio.c#L858. 
 If set zero, the system will hang when polling operation.
 
-### Bug 9 (Fixed)
+### Bug 9 (Fixed, CVE-2021-34260)
 #### Type
 Buffer overflow
 
@@ -922,7 +923,7 @@ It’s called by the function *USBH_ParseCfgDesc()* as shown in https://github.c
 It doesn’t check the validity of the variable *if_descriptor->bLength* compared with the total length of the input buffer 
 which may cause a buffer overflow by the following called function *USBH_GetNextDesc()* as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L419. 
 
-### Bug 10 (Fixed)
+### Bug 10 (Fixed, CVE-2021-34262)
 #### Type
 Buffer overflow
 
