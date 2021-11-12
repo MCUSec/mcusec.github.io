@@ -420,7 +420,7 @@ static void icmp6_send_response_with_addrs_and_netif(struct pbuf *p, u8_t code, 
 }
 ```
 
-### Bug 3 (master branch and 2.1.2, Fixed, zepif_linkoutput)
+### Bug 3 (CVE-2020-22284, master branch and 2.1.2, Fixed)
 #### Type
 Buffer overflow
 
