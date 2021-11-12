@@ -1,6 +1,6 @@
 # Vulnerabilities Summary
 
-<span style="color: grey;">Last updated: Aug 10, 2021</span>
+<span style="color: grey;">Last updated: Nov 13, 2021</span>
 
 We develop techniques to facilitate bug-finding for microcontroller-based systems. The bugs we found so far are  maintained in this page.
 
