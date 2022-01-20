@@ -14,5 +14,6 @@ Please refer our [git repo](https://github.com/MCUSec) for more detials.
 
 # Outline
 1. [Vulnerabilites Summary](https://mcusec.github.io/vulnerabilities_compact)
-2. [Paper: From Library Portability to Para-rehosting: Natively Executing Microcontroller Software on Commodity Hardware (NDSS 2021)](https://www.ndss-symposium.org/ndss-paper/from-library-portability-to-para-rehosting-natively-executing-microcontroller-software-on-commodity-hardware/)
-3. [Paper: 𝜇AFL: Non-intrusive Feedback-driven Fuzzing forMicrocontroller Firmware (ICSE 2022)]()
+1. Jiameng Shi, Le Guan, Wenqiang Li, Dayou Zhang, Ping Chen, Ping Chen (2022). [HARM: Hardware-assisted Continuous Re-randomization for Microcontrollers](). 2022 IEEE European Symposium on Security and Privacy (EuroS&P '22), to appear.
+1. Wenqiang Li, Jiameng Shi, and Fengjun Li, Jingqiang Lin, Wei Wang, Le Guan (2022). [𝜇AFL: Non-intrusive Feedback-driven Fuzzing forMicrocontroller Firmware (ICSE 2022)](https://conf.researchr.org/profile/icse-2022/wenqiangli), to appear.
+1. Wenqiang Li, Le Guan, Jingqiang Lin, Jiameng Shi, Fengjun Li (2021). [From Library Portability to Para-rehosting: Natively Executing Microcontroller Software on Commodity Hardware (NDSS 2021)](https://www.ndss-symposium.org/ndss-paper/from-library-portability-to-para-rehosting-natively-executing-microcontroller-software-on-commodity-hardware/). 28th Network and Distributed System Security Symposium, NDSS ‘21.
