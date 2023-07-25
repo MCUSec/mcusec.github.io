@@ -1,7 +1,7 @@
 # Vulnerabilities Details
 Written by Wenqiang Li
 
-<span style="color: grey;">Last updated: Jul 25, 2021</span>
+<span style="color: grey;">Last updated: Jul 24, 2023</span>
 
 ## <span id="mbed_os_mqtt">Vulnerabilities of Mbed OS MQTT</span>
 - Version
@@ -813,6 +813,7 @@ Therefore, *unionDes->common.bDescriptorType* addresses *unionDes+4*, which can 
 ## <span id="stm_usb">Vulnerabilities of STM SDK USB Driver
 - Version
     - STM32Cube_FW_H7_V1.8.0
+    - STM32Cube_FW_H7_V1.11.0
 
 - Related Link 
     - https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-mcu-mpu-packages/stm32cubeh7.html
@@ -933,3 +934,10 @@ It’s called by the function *USBH_ParseCfgDesc()* as shown in https://github.c
 
 It doesn’t check the validity of the variable *ep_descriptor->bLength* compared with the total length of the input buffer
 which may cause buffer overflow by the following called function *USBH_GetNextDesc()* as shown in https://github.com/STMicroelectronics/STM32CubeH7/blob/79196b09acfb720589f58e93ccf956401b18a191/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L419.
+
+### Bug 11 (TBD)
+#### Type
+Deninal of Service
+
+#### Description
+ In [usbh_ctlreq.c](https://github.com/STMicroelectronics/STM32CubeH7/blob/master/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c), function `USBH_ParseCfgDesc` is responsible for parsing a configuration descriptor. The interface descriptors are parsed in the while-loop (line [468](https://github.com/STMicroelectronics/STM32CubeH7/blob/master/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L468)). However, this loop would no longer exit if the condition in line [471](https://github.com/STMicroelectronics/STM32CubeH7/blob/master/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L471) is not satisfied (i.e., `pdesc->bDescriptorType != USB_DESC_TYPE_INTERFACE`) and `pdesc->bLength == 0`. This is because the function `USBH_GetNextDesc` always returns the pointer to current interface descriptor in line [470](https://github.com/STMicroelectronics/STM32CubeH7/blob/master/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L470). Similarly, the endpoint descriptors are parsed in the loop from line 485 to 513. This loop would no longer exit as well if `bLength` field of current endpoint descriptor is zero and the condition in line [489](https://github.com/STMicroelectronics/STM32CubeH7/blob/master/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c#L489) is not satisfied (i.e., `pdesc->bDescriptorType != USB_DESC_TYPE_ENDPOINT`). The target system will hang in both cases and can only be recovered by removing the malicious USB device and then reset the system manually.
